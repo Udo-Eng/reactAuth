@@ -33,13 +33,13 @@ const AuthForm = () => {
       if(isLogin){
           
            url =
-              "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCKyO3bzIkIcUNVAX6xLbyR7KcAxoMBIT0";
+              "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API KEY]";
 
 
       }else{
         
           url =
-            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCKyO3bzIkIcUNVAX6xLbyR7KcAxoMBIT0";
+            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API KEY]";
         
         
           }
@@ -64,7 +64,7 @@ const AuthForm = () => {
             // if no error logout the data sent 
            return  res.json().then(data => {
 
-                let errorMessage = 'Authtnetication failed!';
+                let errorMessage = 'Authentication failed!';
 
                 if(data && data.error && data.error.message){
                   errorMessage = data.error.message;

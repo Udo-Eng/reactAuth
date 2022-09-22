@@ -15,7 +15,7 @@ const ProfileForm = () => {
        const  enteredPassword = newPasswordInputRef.current.value
 
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCKyO3bzIkIcUNVAX6xLbyR7KcAxoMBIT0",
+        "https://identitytoolkit.googleapis.com/v1/accounts:update?key=[API KEY]",
         {
           method: "POST",
           "Content-Type": "appplication/json",
@@ -25,19 +25,18 @@ const ProfileForm = () => {
             returnSecureToken: true,
           }),
         }
-      ).then(async res => {
-      
-        // let data = await res.json();
+      )
+        .then(async (res) => {
+          // let data = await res.json();
 
-          // Log the data returned 
+          // Log the data returned
           // console.log(data);
-          history.replace('/');
-
-      }).catch(err => {
-
-        let errorMessage =  'The password was not changed sucessfully';
-        return alert(errorMessage);
-      })
+          history.replace("/");
+        })
+        .catch((err) => {
+          let errorMessage = "The password was not changed sucessfully";
+          return alert(errorMessage);
+        });
   }
   return (
     <form className={classes.form} onSubmit={submitHandler}>
